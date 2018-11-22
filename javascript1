@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<style>
+#container1 {
+      opacity: 0.3;
+
+  width: 330px;
+  height: 350px;
+  position: relative;
+  background: white;
+ border-radius: 10px;
+      
+
+}
+
+#section2
+{
+ opacity: 0.3;
+    
+	width: 680px;
+	height: 550px;
+	transform: skew(-50deg);
+	background: #555;
+        display : none;
+        
+
+}
+
+#section1
+{
+  
+      opacity: 0.3;
+      width: 0;
+	height: 0;
+	border-top: 500px solid transparent;
+	border-right: 600px solid #555;
+      display: none;
+	//border-bottom: 600px solid transparent;
+
+}
+#container {
+      opacity: 0.3;
+
+  width: 350px;
+  height: 350px;
+  position: relative;
+  background: white;
+ border-radius: 10px;
+   
+
+}
+#animate1 {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  background-color: red;
+     border-radius: 10px;
+    
+
+ opacity: 1;
+
+}
+#animate {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  background-color: red;
+     border-radius: 10px;
+   display: none;
+    
+
+ opacity: 1;
+
+}
+#container2 {
+      opacity: 0.3;
+
+  width: 350px;
+  height: 350px;
+  position: relative;
+  background: white;
+ border-radius: 10px;
+   
+
+}
+#animate2 {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  background-color: red;
+     border-radius: 10px;
+    
+
+ opacity: 1;
+
+}
+</style>
+<body onload = "hide()" bgcolor = "black">
+<div id = "section2" style = "position:absolute;TOP:10px;LEFT:270px;"> </div>
+<div id = "section1" style = "position:absolute;TOP:10px;LEFT:720px;"> </div>
+ 
+<div id ="container" style = "position:absolute;TOP:90px;LEFT:50px;">
+<div id ="animate" hidden onmouseover = "sect11()" onmouseout = "sect12()"><p><font color = "white" size = 9 ><b> It is important to know, but it is more important to be known  </b></p></div>
+</div>
+<div id = "container1" style = "position:absolute;LEFT:500px;TOP:90px;"><div id = "animate1" onmouseover = "sect21()" onmouseout = "sect22()"></div>
+
+</div>
+<div id = "container2" style = "position:absolute;LEFT:900px;TOP:90px;"><div id = "animate2"></div</div>
+
+<script>
+function sect11()
+{
+   var elem = document.getElementById("section1");  
+    elem.style.display = "block";
+}
+
+function sect12()
+{
+   var elem = document.getElementById("section1");  
+    elem.style.display = "none";
+}
+function sect21()
+{
+   var elem = document.getElementById("section2");  
+    elem.style.display = "block";
+}
+
+function sect22()
+{
+   var elem = document.getElementById("section2");  
+    elem.style.display = "none";
+}
+
+function myMove(iden) {
+  
+  var elem = document.getElementById(iden);  
+    elem.style.display = "block";
+
+  var pos = 0;
+  var id = setInterval(frame, 6);
+  function frame() {
+    if (pos == 50) {
+      clearInterval(id);
+    } else {
+      pos++; 
+      elem.style.top = pos + 'px'; 
+      elem.style.left = pos + 'px'; 
+    }
+  }
+}
+function hide()
+{
+  var elem = document.getElementById("animate");  
+  elem.style.display = "block";
+ setTimeout(myMove('animate'), 1000);
+  var elem1 = document.getElementById("animate1");  
+  elem1.style.display = "none";
+  setTimeout(myMove('animate1'), 1000);
+var elem2 = document.getElementById("animate2");  
+  elem2.style.display = "none";
+  setTimeout(myMove('animate2'), 1000);
+}
+
+</script>
+
+</body>
+</html>
